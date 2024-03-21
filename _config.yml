@@ -30,7 +30,9 @@ twitter_username: jekyllrb
 github_username:  jekyll
 
 # Build settings
-theme: architect
+remote_theme: pages-themes/minimal@v0.2.0
+
+
 plugins:
   - jekyll-feed
   - jekyll-coffeescript
@@ -42,6 +44,7 @@ plugins:
   - jekyll-readme-index
   - jekyll-titles-from-headings
   - jekyll-relative-links
+  -jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
