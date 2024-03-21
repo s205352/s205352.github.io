@@ -1,105 +1,72 @@
 from bokeh.io import output_file, show
-from bokeh.layouts import row
 from bokeh.plotting import figure
+from bokeh.sampledata.periodic_table import elements
+from bokeh.transform import dodge, factor_cmap
 
-import urllib.request
-import pandas as pd
-import numpy as np
-from scipy import stats
-import matplotlib.pyplot as plt
+output_file("periodic.html")
 
-df = pd.read_csv("Police_Department_Incident_Reports__Historical_2003_to_May_2018_20240130.csv")
+periods = ["I", "II", "III", "IV", "V", "VI", "VII"]
+groups = [str(x) for x in range(1, 19)]
 
-df.head()
+df = elements.copy()
+df["atomic mass"] = df["atomic mass"].astype(str)
+df["group"] = df["group"].astype(str)
+df["period"] = [periods[x-1] for x in df.period]
+df = df[df.group != "-"]
+df = df[df.symbol != "Lr"]
+df = df[df.symbol != "Lu"]
 
-focuscrimes = set(['WEAPON LAWS', 'PROSTITUTION', 'DRIVING UNDER THE INFLUENCE', 
-                   'ROBBERY', 'BURGLARY', 'ASSAULT', 'DRUNKENNESS', 
-                   'DRUG/NARCOTIC', 'TRESPASS', 'LARCENY/THEFT', 'VANDALISM', 
-                   'VEHICLE THEFT', 'STOLEN PROPERTY', 'DISORDERLY CONDUCT'])
+cmap = {
+    "alkali metal"         : "#a6cee3",
+    "alkaline earth metal" : "#1f78b4",
+    "metal"                : "#d93b43",
+    "halogen"              : "#999d9a",
+    "metalloid"            : "#e08d49",
+    "noble gas"            : "#eaeaea",
+    "nonmetal"             : "#f1d4Af",
+    "transition metal"     : "#599d7A",
+}
 
-# Filter the DataFrame for focus crimes only
-df = df[df['Category'].isin(focuscrimes)]
+TOOLTIPS = [
+    ("Name", "@name"),
+    ("Atomic number", "@{atomic number}"),
+    ("Atomic mass", "@{atomic mass}"),
+    ("Type", "@metal"),
+    ("CPK color", "$color[hex, swatch]:CPK"),
+    ("Electronic configuration", "@{electronic configuration}"),
+]
 
-# Convert Date column to datetime if not already
-df['Date'] = pd.to_datetime(df['Date'])
+p = figure(title="Periodic Table (omitting LA and AC Series)", width=1000, height=450,
+           x_range=groups, y_range=list(reversed(periods)),
+           tools="hover", toolbar_location=None, tooltips=TOOLTIPS)
 
-# Filter for years 2010-2017
-df = df[(df['Date'].dt.year >= 2010) & (df['Date'].dt.year <= 2017)]
+r = p.rect("group", "period", 0.95, 0.95, source=df, fill_alpha=0.6, legend_field="metal",
+           color=factor_cmap('metal', palette=list(cmap.values()), factors=list(cmap.keys())))
 
-# Assume Time is in HH:MM format; extract hour
-df['Hour'] = pd.to_datetime(df['Time'], format='%H:%M').dt.hour
+text_props = {"source": df, "text_align": "left", "text_baseline": "middle"}
 
-# Group by Category and Hour, then count incidents
-grouped = df.groupby(['Category', 'Hour']).size().reset_index(name='Count')
+x = dodge("group", -0.4, range=p.x_range)
 
-# Calculate total incidents per category
-total_counts = df.groupby('Category').size().reset_index(name='TotalCount')
+p.text(x=x, y="period", text="symbol", text_font_style="bold", **text_props)
 
-# Merge back to get total counts per category
-grouped = grouped.merge(total_counts, on='Category')
+p.text(x=x, y=dodge("period", 0.3, range=p.y_range), text="atomic number",
+       text_font_size="11px", **text_props)
 
-# Normalize counts
-grouped['NormalizedCount'] = grouped['Count'] / grouped['TotalCount']
+p.text(x=x, y=dodge("period", -0.35, range=p.y_range), text="name",
+       text_font_size="7px", **text_props)
 
-from bokeh.models import ColumnDataSource
+p.text(x=x, y=dodge("period", -0.2, range=p.y_range), text="atomic mass",
+       text_font_size="7px", **text_props)
 
-# Ensure the hour column is of type string for Bokeh's x_range
-grouped['Hour'] = grouped['Hour'].astype(str)
+p.text(x=["3", "3"], y=["VI", "VII"], text=["LA", "AC"], text_align="center", text_baseline="middle")
 
-# Pivot the DataFrame for easier plotting with Bokeh
-pivot_df = grouped.pivot(index='Hour', columns='Category', values='NormalizedCount').reset_index()
+p.outline_line_color = None
+p.grid.grid_line_color = None
+p.axis.axis_line_color = None
+p.axis.major_tick_line_color = None
+p.axis.major_label_standoff = 0
+p.legend.orientation = "horizontal"
+p.legend.location ="top_center"
+p.hover.renderers = [r] # only hover element boxes
 
-# Convert pivoted DataFrame to ColumnDataSource
-source = ColumnDataSource(pivot_df)
-
-from bokeh.plotting import figure
-from bokeh.models import FactorRange
-from bokeh.io import output_file, show
-
-# Create a list of hours as strings
-hours = [str(hour) for hour in range(24)]
-
-# Initialize the figure
-p = figure(title="Normalized Crime Distribution by Hour",
-           x_axis_label='Hour of Day',
-           y_axis_label='Normalized Crime Count',
-           x_range=FactorRange(factors=hours),
-           height=400,  # Changed from plot_height to height
-           width=800,   # Changed from plot_width to width
-           tools="pan,wheel_zoom,box_zoom,reset")
-
-# Ensure the x-axis labels are readable
-p.xaxis.major_label_orientation = 1
-
-from bokeh.models import Legend, LegendItem
-from bokeh.layouts import layout
-
-# Assuming p is your figure and bar is your dictionary of vbars
-
-# Create an empty list for legend items
-legend_items = []
-
-# Loop through the bars dictionary to populate legend_items
-for category, glyph in bar.items():
-    legend_items.append((category, [glyph]))
-
-# Remove the old legend, if it exists
-if p.legend:
-    p.legend.items = []
-
-# Create a new legend with the legend items
-new_legend = Legend(items=legend_items, location=(10, 0))
-
-# Assign the legend to the outside of the plot
-new_legend.orientation = "vertical"
-
-# Add the legend to the plot, but ensure it does not overlap the plot
-p.add_layout(new_legend, 'left')
-
-# Make the legend interactive
-p.legend.click_policy = "mute"
-
-# Set up the layout with the plot and place the legend next to it
-# Note: we don't need to create a new layout since we added the legend to the plot
-output_file("periodic1.html")
-save(p)
+show(p)
