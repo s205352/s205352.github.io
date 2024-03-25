@@ -41,8 +41,11 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 <embed 
        type="text/html" 
        src="/3.html"
+        width="2200"
+       height="600"
        >    
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
+
