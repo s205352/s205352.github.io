@@ -1,7 +1,7 @@
 import pandas as pd
 import urllib.request
 import io
-from bokeh.plotting import figure, show
+from bokeh.plotting import figure, show, output_file
 from bokeh.transform import cumsum
 from bokeh.models import ColumnDataSource
 from bokeh.palettes import Category20c
@@ -21,7 +21,7 @@ df.columns = df.columns.str.lower()
 
 # Convert 'date' to datetime and filter the data for 'prostitution' between 2007 and 2017
 df['date'] = pd.to_datetime(df['date'])
-filtered_df = df[(df['category'] == 'PROSTITUTION') & (df['date'].dt.year >= 2007) & (df['date'].dt.year <= 2017)]
+filtered_df = df[(df['category'] == 'PROSTITUTION') & (df['date'].dt.year >= 2006) & (df['date'].dt.year <= 2017)]
 
 # Function to prepare data for a given year
 def prepare_data(year):
@@ -29,12 +29,14 @@ def prepare_data(year):
     counts = year_df['pddistrict'].value_counts().reset_index(name='incidents')
     counts.columns = ['pddistrict', 'incidents']
     counts['angle'] = counts['incidents']/counts['incidents'].sum() * 2*pi
-    counts['color'] = Category20c[:len(counts)]
+    max_colors = max(Category20c.keys())
+    palette_size = min(len(counts), max_colors)
+    counts['color'] = Category20c[palette_size]
     return counts
 
 # Create the grid of pie charts
 pie_charts = []
-for year in range(2007, 2018):
+for year in range(2006, 2018):
     data = prepare_data(year)
     source = ColumnDataSource(data=data)
     p = figure(height=350, width=350, title=f"Prostitution Incidents by District {year}", 
@@ -48,10 +50,10 @@ for year in range(2007, 2018):
     pie_charts.append(p)
 
 # Configure the output file (adjust the filename as necessary)
-output_file("prostitution_incidents_by_district.html")
+output_file("2.html")
 
 # Create the grid layout of pie charts
-grid = gridplot(pie_charts, ncols=3)  # Adjust the number of columns as needed
+grid = gridplot(pie_charts, ncols=2)  # Adjust the number of columns as needed
 
 # Show the grid layout
 show(grid)
