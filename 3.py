@@ -24,10 +24,7 @@ filtered_df = data[(data['category'] == 'prostitution') &
 # Aggregate data by Year and Police District, converting all relevant references to lowercase
 prostitution_counts_by_year = filtered_df.groupby(['year', 'pddistrict']).size().reset_index(name='counts')
 
-# Assuming your GeoJSON file is accessible, specify its path or URL
-geojson_url = 'https://yourhost.com/sfpd.geojson'
-
-# Use urllib to load the GeoJSON data from the URL
+# Load your GeoJSON file for the police districts
 geojson = 'sfpd.geojson'
 
 # Create the choropleth map with a slider for each year
@@ -37,6 +34,7 @@ fig = px.choropleth_mapbox(prostitution_counts_by_year, geojson=geojson, locatio
                            animation_frame='year', opacity=0.5, labels={'counts': 'Prostitution Counts'})
 
 fig.update_layout(margin={"r":0, "t":0, "l":0, "b":0})
+fig.show()
 
 # Save the plot to an HTML file named "3.html"
 fig.write_html("3.html")
