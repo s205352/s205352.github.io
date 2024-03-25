@@ -43,36 +43,6 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
        src="/3.html"
        >    
 
-<div class="embed-responsive">
-<embed type="text/html" src="/1.html"></embed>
-</div>
-
-<div class="embed-responsive">
-<embed type="text/html" src="/2.html"></embed>
-</div>
-
-<div class="embed-responsive">
-<embed type="text/html" src="/3.html"></embed>
-</div>
-
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
-
-<style>
-.embed-responsive {
-    overflow: hidden;
-    padding-bottom: 56.25%; /* Aspect ratio */
-    position: relative;
-    height: 0;
-}
-
-.embed-responsive embed {
-    border: 0;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
-</style>
