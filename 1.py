@@ -1,33 +1,54 @@
 import pandas as pd
-import matplotlib.pyplot as plt
-from bokeh.io import output_file, show
+import io
+import urllib.request
+from bokeh.plotting import figure, output_file, show
+from bokeh.models import ColumnDataSource
 
+# URL of the CSV data
+url = "https://data.sfgov.org/resource/tmnf-yvry.csv?$limit=3000000"
+
+# Use urllib to load the CSV data from the URL
+with urllib.request.urlopen(url) as response:
+    csv_data = response.read().decode('utf-8')
+
+# Convert the string data to a pandas DataFrame
+data = pd.read_csv(io.StringIO(csv_data))
+
+# Ensure the category matches your dataset. Adjust 'category' to the correct column name if needed.
+# Filter data for 'PROSTITUTION' incidents only
+data = data[data['category'] == 'PROSTITUTION']
+
+# Assuming 'date' is the correct column, if it's different adjust accordingly.
+# Convert "Date" column to datetime format
+data['date'] = pd.to_datetime(data['date'])
+
+# Filter data to include only the dates from 2007 to 2017
+data = data[(data['date'].dt.year >= 2007) & (data['date'].dt.year <= 2017)]
+
+# Extract year from "Date" and create a new column
+data['year'] = data['date'].dt.year
+
+# Group data by year and count incidents
+# Adjust 'incidntnum' to the column that uniquely identifies incidents, if different.
+grouped_data = data.groupby('year').count()['incidntnum']
+
+# Setting up the output file (this will save the plot as HTML)
 output_file("1.html")
 
-#Load the data
-data = pd.read_csv("Police_Department_Incident_Reports__Historical_2003_to_May_2018_20240130.csv")
+# Preparing data for Bokeh plotting
+source = ColumnDataSource(data=dict(years=[str(x) for x in grouped_data.index], counts=grouped_data.values))
 
-#Filter data for 'LARCENY/THEFT' incidents only
-data = data[data['Category'] == 'PROSTITUTION']
+# Creating a new plot with a title and axis labels
+p = figure(x_range=source.data['years'], title="Prostitution Incidents from 2007 to 2017 in San Francisco",
+           x_axis_label='Year', y_axis_label='Number of Incidents', height=400, tools="")
 
-#Convert "Date" column to datetime format
-data['Date'] = pd.to_datetime(data['Date'])
+# Adding a bar renderer to the plot
+p.vbar(x='years', top='counts', width=0.9, source=source, legend_label="Incidents")
 
-#Filter data to include only the dates from November 20th to December 31st for each year from 2012 to 2017
-data = data[(data['Date'].dt.month == 11) & (data['Date'].dt.day >= 20) | (data['Date'].dt.month == 12)]
-data = data[(data['Date'].dt.year >= 2007) & (data['Date'].dt.year <= 2017)]
+# Customize the plot
+p.xgrid.grid_line_color = None
+p.y_range.start = 0
+p.xaxis.major_label_orientation = 1.2  # Rotate the x-axis labels for better readability
 
-#Extract year from "Date" and create a new column
-data['Year'] = data['Date'].dt.year
-
-#Group data by year and count incidents
-grouped_data = data.groupby('Year').count()['IncidntNum']
-
-#Plotting
-fig, ax = plt.subplots(figsize=(10, 6))
-grouped_data.plot(kind='bar', color='skyblue', edgecolor='darkblue', ax=ax)
-ax.set_title('Prostitution Incidents from 2007 to 2017 in San Francisco', fontsize=16)
-ax.set_xlabel('Year', fontsize=12)
-ax.set_ylabel('Number of Incidents', fontsize=12)
-plt.xticks(rotation=45)
-plt.show()
+# Display the plot
+show(p)
