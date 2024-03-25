@@ -22,8 +22,8 @@ data = data[data['category'] == 'PROSTITUTION']
 # Convert "Date" column to datetime format
 data['date'] = pd.to_datetime(data['date'])
 
-# Filter data to include only the dates from 2007 to 2017
-data = data[(data['date'].dt.year >= 2007) & (data['date'].dt.year <= 2017)]
+# Filter data to include only the dates from 2008 to 2017
+data = data[(data['date'].dt.year >= 2008) & (data['date'].dt.year <= 2017)]
 
 # Extract year from "Date" and create a new column
 data['year'] = data['date'].dt.year

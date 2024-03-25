@@ -19,9 +19,9 @@ with urllib.request.urlopen(url) as response:
 df = pd.read_csv(io.StringIO(csv_data))
 df.columns = df.columns.str.lower()
 
-# Convert 'date' to datetime and filter the data for 'prostitution' between 2007 and 2017
+# Convert 'date' to datetime and filter the data for 'prostitution' between 2008 and 2017
 df['date'] = pd.to_datetime(df['date'])
-filtered_df = df[(df['category'] == 'PROSTITUTION') & (df['date'].dt.year >= 2006) & (df['date'].dt.year <= 2017)]
+filtered_df = df[(df['category'] == 'PROSTITUTION') & (df['date'].dt.year >= 2008) & (df['date'].dt.year <= 2017)]
 
 # Function to prepare data for a given year
 def prepare_data(year):
@@ -36,7 +36,7 @@ def prepare_data(year):
 
 # Create the grid of pie charts
 pie_charts = []
-for year in range(2006, 2018):
+for year in range(2008, 2018):
     data = prepare_data(year)
     source = ColumnDataSource(data=data)
     p = figure(height=350, width=350, title=f"Prostitution Incidents by District {year}", 
