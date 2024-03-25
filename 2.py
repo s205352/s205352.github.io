@@ -1,11 +1,13 @@
 import pandas as pd
 import urllib.request
 import io
+from bokeh.io import curdoc
 from bokeh.io import output_file, show
 from bokeh.plotting import figure
 from bokeh.transform import cumsum
-from bokeh.models import ColumnDataSource, HoverTool
+from bokeh.models import ColumnDataSource, HoverTool, Slider
 from bokeh.palettes import Category20c
+from bokeh.layouts import layout
 from math import pi
 
 # Specify the URL of your CSV data
@@ -54,6 +56,22 @@ p.wedge(x=0, y=1, radius=0.4,
 p.axis.axis_label=None
 p.axis.visible=False
 p.grid.grid_line_color=None
+
+# Slider callback function
+def update_chart(attr, old, new):
+    year = slider.value
+    new_source = ColumnDataSource(data=prepare_data(year))
+    source.data = new_source.data
+
+# Year slider
+slider = Slider(start=2007, end=2017, value=initial_year, step=1, title="Year")
+slider.on_change('value', update_chart)
+
+# Add layout
+lay = layout([[slider], [p]])
+
+# Add the layout to the current document
+curdoc().add_root(lay)
 
 # Show or save the plot
 show(p)  # Opens the plot in a browser
