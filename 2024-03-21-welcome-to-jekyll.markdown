@@ -42,7 +42,7 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
        type="text/html" 
        src="/2.html"
        width="1100"
-       height="600"
+       height="1800"
        >      
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
