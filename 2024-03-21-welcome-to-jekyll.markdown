@@ -42,6 +42,9 @@ Concluding our journey, we reflect on the lessons learned and the path forward. 
 
 For further exploration and discussion on the topics covered in this feature, please visit the following resources:
 
+<embed type="text/html" src="/test.html" width="1100" height="600">
+
+
 - [Jekyll Docs](https://jekyllrb.com/docs/home)
 - [Jekyll GitHub](https://github.com/jekyll/jekyll)
 - [Jekyll Talk](https://talk.jekyllrb.com/)
