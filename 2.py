@@ -1,13 +1,11 @@
 import pandas as pd
 import urllib.request
 import io
-from bokeh.io import curdoc
-from bokeh.io import output_file, show
-from bokeh.plotting import figure
+from bokeh.plotting import figure, show
 from bokeh.transform import cumsum
-from bokeh.models import ColumnDataSource, HoverTool, Slider
+from bokeh.models import ColumnDataSource
 from bokeh.palettes import Category20c
-from bokeh.layouts import layout
+from bokeh.layouts import gridplot
 from math import pi
 
 # Specify the URL of your CSV data
@@ -31,47 +29,29 @@ def prepare_data(year):
     counts = year_df['pddistrict'].value_counts().reset_index(name='incidents')
     counts.columns = ['pddistrict', 'incidents']
     counts['angle'] = counts['incidents']/counts['incidents'].sum() * 2*pi
-    counts['color'] = Category20c[len(counts) % 20]
+    counts['color'] = Category20c[:len(counts)]
     return counts
 
-# Initial data preparation
-initial_year = 2007
-data = prepare_data(initial_year)
-
-source = ColumnDataSource(data=data)
+# Create the grid of pie charts
+pie_charts = []
+for year in range(2007, 2018):
+    data = prepare_data(year)
+    source = ColumnDataSource(data=data)
+    p = figure(height=350, width=350, title=f"Prostitution Incidents by District {year}", 
+               tools="", tooltips="@pddistrict: @incidents", x_range=(-0.5, 1.0))
+    p.wedge(x=0, y=1, radius=0.4, 
+            start_angle=cumsum('angle', include_zero=True), end_angle=cumsum('angle'),
+            line_color="white", fill_color='color', legend_field='pddistrict', source=source)
+    p.axis.axis_label=None
+    p.axis.visible=False
+    p.grid.grid_line_color=None
+    pie_charts.append(p)
 
 # Configure the output file (adjust the filename as necessary)
-output_file("2.html")
+output_file("prostitution_incidents_by_district.html")
 
-# Create the pie chart
-p = figure(height=350, title="Prostitution Incidents by District", toolbar_location=None,
-           tools="", tooltips="@pddistrict: @incidents", x_range=(-0.5, 1.0))
+# Create the grid layout of pie charts
+grid = gridplot(pie_charts, ncols=3)  # Adjust the number of columns as needed
 
-p.add_tools(HoverTool(tooltips=[("District", "@pddistrict"), ("Incidents", "@incidents")]))
-
-p.wedge(x=0, y=1, radius=0.4,
-        start_angle=cumsum('angle', include_zero=True), end_angle=cumsum('angle'),
-        line_color="white", fill_color='color', legend_field='pddistrict', source=source)
-
-p.axis.axis_label=None
-p.axis.visible=False
-p.grid.grid_line_color=None
-
-# Slider callback function
-def update_chart(attr, old, new):
-    year = slider.value
-    new_source = ColumnDataSource(data=prepare_data(year))
-    source.data = new_source.data
-
-# Year slider
-slider = Slider(start=2007, end=2017, value=initial_year, step=1, title="Year")
-slider.on_change('value', update_chart)
-
-# Add layout
-lay = layout([[slider], [p]])
-
-# Add the layout to the current document
-curdoc().add_root(lay)
-
-# Show or save the plot
-show(p)  # Opens the plot in a browser
+# Show the grid layout
+show(grid)
