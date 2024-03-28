@@ -1,8 +1,7 @@
 ---
 layout: page
-title: Paper
+title: Assignment 2
 ---
-
 
 <html lang="en">
 <head>
