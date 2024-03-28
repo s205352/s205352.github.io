@@ -113,5 +113,3 @@ title: Assignment 2
             </div>
         </div>
     </div>
-</body>
-</html>
