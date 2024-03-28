@@ -118,7 +118,6 @@ title: Assignment 2
         </div>
         <embed type="text/html" src="/2.html" width="800" height="400">
     </div>
-    </div>
 
 </body>
 </html>
