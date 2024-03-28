@@ -101,6 +101,7 @@ title: Assignment 2
     <div class="section-title">3 Data Visualizations</div>
     <embed type="text/html" src="/1.html" width="800" height="400">
         <div class="columns">
+        <div class="section-title">3.1 Bar chart time-series</div>
             <div class="section">
                 <p>
                     The first visualization we will look at is a time series bar chart. This plot contains the years from 2008 to 2017 on the x-axis and the number of prostitution incidents for each year on the y-axis. What we can see here is, first of all, a validation of our initial observation that prostitution is less in 2017 compared to 2008. What is more interesting is that there is almost a steady yearly decrease in all the years in between. This tells us that not only are prostitution incidents being reported less in 2017 than in 2008, but also that there has been a somewhat consistent decrease in the number of prostitution incidents in each year, with some minor outliers. This seems like it is going correctly, and the city is doing well.
@@ -109,6 +110,7 @@ title: Assignment 2
         </div>
     <div class="column-separator"></div>
         <div class="columns">
+        <div class="section-title">3.2 Pie charts for police districts</div>
             <div class="section">
                 <p>
                     The second visualization also looks at prostitution incidents for each year. However, we are now utilizing our information on which district it takes place and have visualized it in a pie chart. The reason for this is that we already know that the overall number of prostitution incidents is almost decreasing each year, but how? Do all districts have much less prostitution, or are just some of the districts the reason for this? When looking at the pie charts for each year, it is clear that the decrease in prostitution incidents is heavily due to certain districts. Mission had the most incidents in the first year at 702, and it has been on quite a rollercoaster such as in 2009 where it made up almost 3/4 of all prostitution incidents. However, it reached 214 in 2017, even less than the previous year, so Mission has decreased the overall number. The same can be said for the following districts: Northern, Tenderloin (which has almost eliminated prostitution from 226 to 8 incidents from 2008 till 2017). However, some districts were almost non-existent in the earlier pie chart, which indicates that compared to the rest of the districts, not a lot of prostitution was taking place, but now they are filling more of the pie chart and have more incidents. This can be said about Tereval and Southern. Some also stayed pretty consistent. Overall, based on the overall numbers, we can however say that prostitution incidents have steadily been decreasing, but that that is not the case in all districts and that there are certain districts which play a big role in this decrease..
@@ -118,15 +120,16 @@ title: Assignment 2
         <embed type="text/html" src="/2.html" width="800" height="400">
     <div class="column-separator"></div>
         <div class="columns">
+        <div class="section-title">3.3 Incidents district map over years</div>
             <div class="section">
                 <p>
-                    The third visualization is quite similar to the second one; the difference here is that we are using a district map instead of piecharts, and instead of having multiple piecharts, we have one map which animates the yearly  difference in the number of prostitution incidents by giving different colours to the districts in the map. This map, of course, showcases the same tendencies as described earlier. Still, it is a good way to visually understand where the issues have been the largest and the smallest in San Francisco, as described earlier (this can also be seen by holding the mouse over the districts). Furthermore, this also shows that generally, the number of prostitution has decreased, especially in some areas.
+                    The third visualization is quite similar to the second one; the difference here is that we are using a district map instead of pie charts, and instead of having multiple pie charts, we have one map which animates the yearly  difference in the number of prostitution incidents by giving different colours to the districts in the map. This map, of course, showcases the same tendencies as described earlier. Still, it is a good way to visually understand where the issues have been the largest and the smallest in San Francisco, as described earlier (this can also be seen by holding the mouse over the districts). Furthermore, this also shows that generally, the number of prostitution has decreased, especially in some areas.
                 </p>
             </div>
         </div>
         <embed type="text/html" src="/3.html" width="700" height="400">
     </div>
-    </div>
+    
 
 </body>
 </html>
