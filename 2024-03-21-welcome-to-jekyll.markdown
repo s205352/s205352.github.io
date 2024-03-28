@@ -103,7 +103,6 @@ title: Assignment 2
         <div class="columns">
             <div class="section">
                 <div class="section-title">3 Data Visualizations</div>
-                <embed type="text/html" src="/1.html" width="1100" height="400">
                 <p>
                     The first visualization we will look at is a time series bar chart. This plot contains the years from 2008 to 2017 on the x-axis and the number of prostitution incidents for each year on the y-axis. What we can see here is, first of all, a validation of our initial observation that prostitution is less in 2017 compared to 2008. What is more interesting is that there is almost a steady yearly decrease in all the years in between. This tells us that not only are prostitution incidents being reported less in 2017 than in 2008, but also that there has been a somewhat consistent decrease in the number of prostitution incidents in each year, with some minor outliers. This seems like it is going correctly, and the city is doing well.
                 </p>
