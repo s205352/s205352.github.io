@@ -77,17 +77,6 @@ title: Assignment 2
                     Furthermore, the availability of this dataset on a public government platform shows the government's commitment to transparency and accountability within the city's law enforcement operations. It empowers the city's citizens and can help improve public safety. A pivotal point to keep in mind is that even though that data is from 2003 to 2018, the 2018 data is only until May, so this is the reason why the amount of crime of that year might appear less in certain graphs when comparing years it might be better to look from 2003 to 2017.
 
                 </p>
-                <!-- More content here -->
-            </div>
-            <div class="column-separator"></div>
-            <div class="section">
-                <div class="section-title">2 Related Work</div>
-                <p>
-                    <!-- Related work text here -->
-                </p>
-                <!-- More content here -->
-            </div>
-            <!-- You can continue adding more sections within the columns div as needed -->
         </div>
     </div>
 
@@ -99,8 +88,6 @@ title: Assignment 2
                 <p>
                     <!-- Story text here -->
                     Our focus in this dataset and the data story we would like to talk about is the way the city has handled the prostitution which takes place in the city. We initially noticed a big decrease in the number of prostitution incidents in 2017 compared with 2008. We therefore decided we wanted to research this further to find out what the data can tell us about prostitution incidents between 2008 and 2017.
-
-                    The first visualization we will look at is a time series bar chart. This plot contains the years from 2008 to 2017 on the x-axis and the number of prostitution incidents for each year on the y-axis. What we can see here is, first of all, a validation of our initial observation that prostitution is less in 2017 compared to 2008. What is more interesting is that there is almost a steady yearly decrease in all the years in between. This tells us that not only are prostitution incidents being reported less in 2017 than in 2008, but also that there has been a somewhat consistent decrease in the number of prostitution incidents in each year, with some minor outliers. This seems like it is going correctly, and the city is doing well.
                 </p>
             </div>
 
@@ -115,7 +102,7 @@ title: Assignment 2
         </div>
     </div>
 
-     <div class="paper">
+    <div class="paper">
     <embed type="text/html" src="/2.html" width="1100" height="400">
         <div class="columns">
             <div class="section">
