@@ -98,7 +98,7 @@ title: Assignment 2
                 </p>
             </div>
         </div>
-
+    <div class="column-separator"></div>
         <div class="section">
             <div class="section-title">3 Data Visualization Insights</div>
             <p>
