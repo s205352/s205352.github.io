@@ -117,6 +117,16 @@ title: Assignment 2
             </div>
         </div>
         <embed type="text/html" src="/2.html" width="800" height="400">
+    <div class="column-separator"></div>
+        <div class="columns">
+            <div class="section">
+                <p>
+                    The third visualization is quite similar to the second one; the difference here is that we are using a district map instead of piecharts, and instead of having multiple piecharts, we have one map which animates the yearly  difference in the number of prostitution incidents by giving different colours to the districts in the map. This map, of course, showcases the same tendencies as described earlier. Still, it is a good way to visually understand where the issues have been the largest and the smallest in San Francisco, as described earlier (this can also be seen by holding the mouse over the districts). Furthermore, this also shows that generally, the number of prostitution has decreased, especially in some areas.
+                </p>
+            </div>
+        </div>
+        <embed type="text/html" src="/3.html" width="800" height="400">
+    </div>
     </div>
 
 </body>
