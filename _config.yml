@@ -20,12 +20,13 @@
 
 title: Group 14
 email: s205352@student.dtu.dk
+email: s205490@student.dtu.dk
 description: >- # this means to ignore newlines until "baseurl:"
   02806 Social Data Assignments page for group 14
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  s205352
-github_username:  ShivGopal20
+
 
 # Build settings
 theme: minima
