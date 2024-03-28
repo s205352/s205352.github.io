@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+---
+layout: page
+title: Assignment 2
+---
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
