@@ -4,7 +4,7 @@ import io
 from bokeh.plotting import figure, show, output_file
 from bokeh.transform import cumsum
 from bokeh.models import ColumnDataSource
-from bokeh.palettes import Category20c
+from bokeh.palettes import Category20c, Turbo256
 from bokeh.layouts import gridplot
 from math import pi
 
@@ -23,15 +23,20 @@ df.columns = df.columns.str.lower()
 df['date'] = pd.to_datetime(df['date'])
 filtered_df = df[(df['category'] == 'PROSTITUTION') & (df['date'].dt.year >= 2008) & (df['date'].dt.year <= 2017)]
 
+# Identify all unique districts and create a consistent color mapping
+unique_districts = sorted(filtered_df['pddistrict'].unique())
+max_colors = len(Turbo256)  # Using a larger palette if there are more than 20 districts
+palette_size = min(len(unique_districts), max_colors)
+color_map = {district: Turbo256[i * int(max_colors / palette_size)] for i, district in enumerate(unique_districts)}
+
 # Function to prepare data for a given year
 def prepare_data(year):
     year_df = filtered_df[filtered_df['date'].dt.year == year]
     counts = year_df['pddistrict'].value_counts().reset_index(name='incidents')
     counts.columns = ['pddistrict', 'incidents']
     counts['angle'] = counts['incidents']/counts['incidents'].sum() * 2*pi
-    max_colors = max(Category20c.keys())
-    palette_size = min(len(counts), max_colors)
-    counts['color'] = Category20c[palette_size]
+    # Apply the consistent color mapping
+    counts['color'] = counts['pddistrict'].map(color_map)
     return counts
 
 # Create the grid of pie charts
@@ -50,7 +55,7 @@ for year in range(2008, 2018):
     pie_charts.append(p)
 
 # Configure the output file (adjust the filename as necessary)
-output_file("2.html")
+output_file("prostitution_incidents_by_district.html")
 
 # Create the grid layout of pie charts
 grid = gridplot(pie_charts, ncols=2)  # Adjust the number of columns as needed
