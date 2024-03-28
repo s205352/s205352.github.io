@@ -109,7 +109,6 @@ title: Assignment 2
             </div>
         </div>
     <div class="column-separator"></div>
-    <embed type="text/html" src="/2.html" width="800" height="400">
         <div class="columns">
             <div class="section">
                 <p>
@@ -117,6 +116,7 @@ title: Assignment 2
                 </p>
             </div>
         </div>
+        <embed type="text/html" src="/2.html" width="800" height="400">
     </div>
     </div>
 
