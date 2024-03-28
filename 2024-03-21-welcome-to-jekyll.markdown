@@ -52,6 +52,13 @@ title: Assignment 2
         margin: 20px 0;
     }
     
+    /* Paged.js and print styles */
+@media screen, print {
+    .section {
+        break-inside: avoid; /* Avoid breaking inside a section */
+    }
+}
+
 </style>
 </head>
 <body>
@@ -90,5 +97,8 @@ title: Assignment 2
             <!-- You can continue adding more sections within the columns div as needed -->
         </div>
     </div>
+    <!-- Include the Paged.js library for pagination -->
+
+    <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
 </body>
 </html>
