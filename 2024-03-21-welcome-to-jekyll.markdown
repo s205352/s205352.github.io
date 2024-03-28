@@ -99,7 +99,7 @@ title: Assignment 2
             </div>
         </div>
     <div class="column-separator"></div>
-    <embed type="text/html" src="/1.html" width="1100" height="400">
+    <embed type="text/html" src="/1.html" width="1200" height="500">
         <div class="columns">
             <div class="section">
                 <div class="section-title">3 Data Visualizations</div>
