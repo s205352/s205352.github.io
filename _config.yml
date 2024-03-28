@@ -20,7 +20,8 @@
 
 title: Group 14
 description: >- # this means to ignore newlines until "baseurl:"
-  02806 Social Data Assignments page for group 14
+  02806 Social Data 
+  Assignments page for group 14
   s205352@student.dtu.dk
   s205490@student.dtu.dk
 baseurl: "" # the subpath of your site, e.g. /blog
