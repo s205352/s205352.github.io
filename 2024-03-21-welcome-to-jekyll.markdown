@@ -53,9 +53,9 @@
 <body>
 
     <div class="navigation">
-        <a href="#paper1">Paper 1</a>
-        <a href="#paper2">Paper 2</a>
-        <a href="#paper3">Paper 3</a>
+        <a href="#paper1">Page 1</a>
+        <a href="#paper2">Page 2</a>
+        <a href="#paper3">Page 3</a>
     </div>
 
     <div id="paper1" class="paper">
