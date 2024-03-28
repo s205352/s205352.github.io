@@ -55,7 +55,7 @@ for year in range(2008, 2018):
     pie_charts.append(p)
 
 # Configure the output file (adjust the filename as necessary)
-output_file("prostitution_incidents_by_district.html")
+output_file("2.html")
 
 # Create the grid layout of pie charts
 grid = gridplot(pie_charts, ncols=2)  # Adjust the number of columns as needed
