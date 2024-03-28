@@ -92,6 +92,7 @@ title: Assignment 2
     </div>
 
     <div class="paper">
+    <embed type="text/html" src="/1.html" width="1100" height="400">
         <div class="columns">
             <div class="section">
                 <div class="section-title">2 Our story</div>
@@ -99,7 +100,6 @@ title: Assignment 2
                     <!-- Story text here -->
                     Our focus in this dataset and the data story we would like to talk about is the way the city has handled the prostitution which takes place in the city. We initially noticed a big decrease in the number of prostitution incidents in 2017 compared with 2008. We therefore decided we wanted to research this further to find out what the data can tell us about prostitution incidents between 2008 and 2017.
                 </p>
-                <embed type="text/html" src="/1.html" width="400" height="400">
             </div>
         </div>
     </div>
