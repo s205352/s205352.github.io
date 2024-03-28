@@ -1,6 +1,8 @@
-title: "Story of San Francisco Crime"
-date: 2024-03-25
-categories: jekyll update
+---
+layout: page
+title: Paper
+---
+
 
 <!DOCTYPE html>
 <html lang="en">
