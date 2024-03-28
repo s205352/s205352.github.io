@@ -124,7 +124,7 @@ title: Assignment 2
                 </p>
             </div>
         </div>
-        <embed type="text/html" src="/3.html" width="600" height="400">
+        <embed type="text/html" src="/3.html" width="700" height="400">
     </div>
     </div>
 
