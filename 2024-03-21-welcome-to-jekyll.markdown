@@ -156,5 +156,3 @@ title: Assignment 2
             <li><a href="https://localnewsmatters.org/2023/08/17/sex-work-and-the-city-policing-prostitution-in-san-francisco-reflects-evolving-attitudes/">New stories about prostitution in San Francisco</a></li>
         </ul>
     </div>
-</body>
-</html>
