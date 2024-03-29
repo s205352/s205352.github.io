@@ -148,7 +148,7 @@ title: Assignment 2
         <div class="section-title">References</div>
             <div class="section">
                 <p>
-                    ahahahaha
+                    <a href="https://www.example.com">Visit Example</a>
                 </p>
             </div>
         </div>
