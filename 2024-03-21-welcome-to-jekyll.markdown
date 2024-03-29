@@ -117,7 +117,7 @@ title: Assignment 2
                 </p>
             </div>
         </div>
-        <embed type="text/html" src="/2.html" width="800" height="400">
+        <embed type="text/html" src="/2.html" width="800" height="2000">
     <div class="column-separator"></div>
         <div class="columns">
         <div class="section-title">3.3 Map over incidents in districts</div>
@@ -143,8 +143,9 @@ title: Assignment 2
             </div>
             </div>
         </div>
-        <div class="column-separator"></div>
+    <div class="column-separator"></div>
         <div class="columns">
+        <div style="text-align: left;">
         <div class="section-title">References</div>
             <div class="section">
                 <p>
