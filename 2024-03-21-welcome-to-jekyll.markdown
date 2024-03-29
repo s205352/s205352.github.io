@@ -148,11 +148,11 @@ title: Assignment 2
         <div class="section-title">References</div>
             <div class="section">
                 <p>
-                    <a href="https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-Historical-2003/tmnf-yvry/about_data">SF Crime Data 2003-2018</a>
+                    <a href="https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-Historical-2003/tmnf-yvry/about_data">SF Crime Data 2003-2018</a> \n
 
-                    <a href="https://docs.bokeh.org/en/latest/docs/user_guide/topics/pie.html">Bokeh Pie Charts</a>
+                    <a href="https://docs.bokeh.org/en/latest/docs/user_guide/topics/pie.html">Bokeh Pie Charts</a> \n
 
-                    <a href="https://raw.githubusercontent.com/suneman/socialdata2022/main/files/sfpd.geojson">Map coordinates for Police Districts in San Francisco - geojson</a>
+                    <a href="https://raw.githubusercontent.com/suneman/socialdata2022/main/files/sfpd.geojson">Map coordinates for Police Districts in San Francisco - geojson</a> \n
 
                     <a href="https://localnewsmatters.org/2023/08/17/sex-work-and-the-city-policing-prostitution-in-san-francisco-reflects-evolving-attitudes/">New stories about prostitution in San Francisco</a>
                 </p>
