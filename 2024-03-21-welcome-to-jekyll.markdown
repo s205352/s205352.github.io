@@ -117,7 +117,7 @@ title: Assignment 2
                 </p>
             </div>
         </div>
-        <embed type="text/html" src="/2.html" width="800" height="2000">
+        <embed type="text/html" src="/2.html" width="800" height="1780">
     <div class="column-separator"></div>
         <div class="columns">
         <div class="section-title">3.3 Map over incidents in districts</div>
@@ -135,7 +135,7 @@ title: Assignment 2
                 <p>
                     The second visualization also looks at prostitution incidents for each year. However, we are now utilizing our information on which district it takes place and have visualized it in a pie chart. The reason for this is that we already know that the overall number of prostitution incidents is almost decreasing each year, but how? Do all districts have much less prostitution, or are just some of the districts the reason for this? When looking at the pie charts for each year, it is clear that the decrease in prostitution incidents is heavily due to certain districts. Mission had the most incidents in the first year at 702, and it has been on quite a rollercoaster such as in 2009 where it made up almost 3/4 of all prostitution incidents. However, it reached 214 in 2017, even less than the previous year, so Mission has decreased the overall number. The same can be said for the following districts: Northern, Tenderloin (which has almost eliminated prostitution from 226 to 8 incidents from 2008 till 2017). However, some districts were almost non-existent in the earlier pie chart, which indicates that compared to the rest of the districts, not a lot of prostitution was taking place, but now they are filling more of the pie chart and have more incidents. This can be said about Tereval and Southern. Some also stayed pretty consistent. Overall, based on the overall numbers, we can however say that prostitution incidents have steadily been decreasing, but that that is not the case in all districts and that there are certain districts which play a big role in this decrease..
                 </p>
-            <div class="section-title">News stories from the area</div>
+            <div class="section-title">News stories on prostitution in San Francisco</div>
             <div class="section">
                 <p>
                     The second visualization also looks at prostitution incidents for each year. However, we are now utilizing our information on which district it takes place and have visualized it in a pie chart. The reason for this is that we already know that the overall number of prostitution incidents is almost decreasing each year, but how? Do all districts have much less prostitution, or are just some of the districts the reason for this? When looking at the pie charts for each year, it is clear that the decrease in prostitution incidents is heavily due to certain districts. Mission had the most incidents in the first year at 702, and it has been on quite a rollercoaster such as in 2009 where it made up almost 3/4 of all prostitution incidents. However, it reached 214 in 2017, even less than the previous year, so Mission has decreased the overall number. The same can be said for the following districts: Northern, Tenderloin (which has almost eliminated prostitution from 226 to 8 incidents from 2008 till 2017). However, some districts were almost non-existent in the earlier pie chart, which indicates that compared to the rest of the districts, not a lot of prostitution was taking place, but now they are filling more of the pie chart and have more incidents. This can be said about Tereval and Southern. Some also stayed pretty consistent. Overall, based on the overall numbers, we can however say that prostitution incidents have steadily been decreasing, but that that is not the case in all districts and that there are certain districts which play a big role in this decrease..
@@ -148,7 +148,13 @@ title: Assignment 2
         <div class="section-title">References</div>
             <div class="section">
                 <p>
-                    <a href="https://www.example.com">Visit Example</a>
+                    <a href="https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-Historical-2003/tmnf-yvry/about_data">SF Crime Data 2003-2018</a>
+
+                    <a href="https://docs.bokeh.org/en/latest/docs/user_guide/topics/pie.html">Bokeh Pie Charts</a>
+
+                    <a href="https://raw.githubusercontent.com/suneman/socialdata2022/main/files/sfpd.geojson">Map coordinates for Police Districts in San Francisco - geojson</a>
+
+                    <a href="https://localnewsmatters.org/2023/08/17/sex-work-and-the-city-policing-prostitution-in-san-francisco-reflects-evolving-attitudes/">New stories about prostitution in San Francisco</a>
                 </p>
             </div>
         </div>
