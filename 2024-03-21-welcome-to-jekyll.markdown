@@ -144,7 +144,6 @@ title: Assignment 2
             </div>
         </div>
     <div class="column-separator"></div>
-        <div class="columns">
         <div style="text-align: left;">
         <div class="section-title">References</div>
             <div class="section">
@@ -154,7 +153,5 @@ title: Assignment 2
             </div>
         </div>
     </div>
-    
-
 </body>
 </html>
