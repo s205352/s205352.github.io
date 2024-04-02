@@ -147,6 +147,12 @@ title: Assignment 2
         </div>
     <div class="column-separator"></div>
         <div style="text-align: left;">
+    <div class="section-title">Contribution</div>
+    <div class="section">
+                <p>
+                    We have worked together when making the whole assignment and thereby we say that we have worked equally on this.
+                </p>
+            </div>
     <div class="section-title">References</div>
     <div class="section">
         <ul>
