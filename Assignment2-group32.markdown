@@ -71,7 +71,7 @@ We found a consistent trend from 2008 to 2017, where the number fell almost year
 
 ### News Stories on Prostitution in San Francisco
 
-Prostitution in San Francisco remains a complex issue influenced by legal restrictions, community concerns, and the safety of sex workers. While sex work itself is illegal, recent legislative changes, like the decriminalization of loitering with the intent to commit prostitution, reflect shifting perspectives aimed at reducing harm to those involved in the trade. The city has witnessed a surge in visible street-level sex work, particularly on streets like Capp Street, described by some residents as more brazen than ever. This increase may partly stem from a post-pandemic rise in activity.
+The decrease in prostitution in San Francisco from 2008 to 2017 can be due to many things. One general correlation which is sometimes seen is that gentrification leads to richer residents and lower crime. These articles talk about the city's gentrification, particularly due to the circumstances such as the tech boom. This era of rapid economic growth led to higher property values and living costs, pushing lower-income residents. Based on the general idea of gentrification, this could be part of the reason why prostitution has been on the decrease, especially in 2012, where one of the articles also states that the tech boom took place. 2012 is also the year where prostitution decreased the most compared to the previous year.
                     
 Overall the community and authorities are trying to address the situation through various measures. The police have conducted stings to deter the demand for sex work, while residents seek solutions that move the activity away from their streets. Proposals for designated areas for legalized sex work are under discussion, focusing on enhancing safety for all involved. San Francisco has also implemented a Human Trafficking Task Force to address related crimes.
 
@@ -88,4 +88,6 @@ We have worked together when making the whole assignment and thereby we say that
 - [SF Crime Data 2003-2018](https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-Historical-2003/tmnf-yvry/about_data)
 - [Bokeh Pie Charts](https://docs.bokeh.org/en/latest/docs/user_guide/topics/pie.html)
 - [Map coordinates for Police Districts in San Francisco - geojson](https://raw.githubusercontent.com/suneman/socialdata2022/main/files/sfpd.geojson)
-- [New stories about prostitution in San Francisco](https://localnewsmatters.org/2023/08/17/sex-work-and-the-city-policing-prostitution-in-san-francisco-reflects-evolving-attitudes/)
+- [About prostitution in San Francisco](https://localnewsmatters.org/2023/08/17/sex-work-and-the-city-policing-prostitution-in-san-francisco-reflects-evolving-attitudes/)
+- [Another perspective in prostitution](https://www.sfgate.com/business/article/Call-girl-business-high-pay-brief-career-3224048.php)
+- [Tech Boom - Gentrification](https://www.nytimes.com/2012/06/05/us/san-francisco-tech-boom-brings-jobs-and-worries.html)
