@@ -1,6 +1,5 @@
 ---
-layout: page
-title: Assignment 2
+layout: default
 ---
 
 # A Short Data Story - Prostitution in San Francisco
