@@ -38,6 +38,7 @@ This tells us that not only are prostitution incidents being reported less in 20
 
 <h5>Bar chart time series over the years from 2008 to 2017 prostitution decrease in San Francisco</h5>
 <iframe src="https://s205352.github.io/1.html" width="800" height="450"></iframe>
+<embed type="text/html" src="/2.html" width="800" height="1780">
 
 #### 3.2 Pie charts for police districts
 
