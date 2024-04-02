@@ -36,9 +36,8 @@ The first visualization we will look at is a time series bar chart. This plot co
 
 This tells us that not only are prostitution incidents being reported less in 2017 than in 2008, but also that there has been a somewhat consistent decrease in the number of prostitution incidents in each year, with some minor outliers. This seems like it is going correctly, and the city is doing well.
 
-<h5>Bar chart time series over the years from 2008 to 2017 prostitution decrease in San Francisco</h5>
-<iframe src="https://s205352.github.io/1.html" width="800" height="450"></iframe>
-<embed type="text/html" src="/2.html" width="800" height="1780">
+<h5>Bar chart time series over the years from 2008 to 2017 prostitution incidents in San Francisco</h5>
+<embed type="text/html" src="/1.html" width="800" height="400">
 
 #### 3.2 Pie charts for police districts
 
@@ -48,8 +47,8 @@ Mission had the most incidents in the first year at 702, and it has been on quit
  
 Overall, based on the overall numbers, we can however say that prostitution incidents have steadily been decreasing, but that that is not the case in all districts and that there are certain districts which play a big role in this decrease.
 
-<h5>Pie charts over the years from 2008 to 2017 according to prostitution for Police Districts in San Francisco</h5>
-<iframe src="https://s205352.github.io/2.html" width="800" height="1830"></iframe>
+<h5>Pie charts over the years from 2008 to 2017 according to prostitution incidents for Police Districts in San Francisco</h5>
+<embed type="text/html" src="/2.html" width="800" height="1780">
 
 #### 3.3 Map over incidents in districts
 
@@ -58,7 +57,7 @@ The third visualization is quite similar to the second one; the difference here 
 This map, of course, showcases the same tendencies as described earlier. Still, it is a good way to visually understand where the issues have been the largest and the smallest in San Francisco, as described earlier (this can also be seen by holding the mouse over the districts). Furthermore, this also shows that generally, the number of prostitution has decreased, especially in some areas.
 
 <h5>Map over incidents in the years from 2008 to 2017 according to prostitution for Police Districts in San Francisco</h5>
-<iframe src="https://s205352.github.io/3.html" width="800" height="700"></iframe>
+<embed type="text/html" src="/3.html" width="800" height="700">
 
 
 <div style="border-bottom: 1px solid #000; margin: 20px 0;"></div>
