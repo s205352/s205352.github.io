@@ -57,7 +57,7 @@ The third visualization is quite similar to the second one; the difference here 
 This map, of course, showcases the same tendencies as described earlier. Still, it is a good way to visually understand where the issues have been the largest and the smallest in San Francisco, as described earlier (this can also be seen by holding the mouse over the districts). Furthermore, this also shows that generally, the number of prostitution has decreased, especially in some areas.
 
 <h5>Map over incidents in the years from 2008 to 2017 according to prostitution for Police Districts in San Francisco</h5>
-<iframe src="https://s205352.github.io/3.html" width="1000" height="450"></iframe>
+<iframe src="https://s205352.github.io/3.html" width="1000" height="600"></iframe>
 
 
 <div style="border-bottom: 1px solid #000; margin: 20px 0;"></div>
